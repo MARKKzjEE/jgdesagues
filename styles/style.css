@@ -187,12 +187,14 @@ footer .footer-name {
   border-radius: 10px;
 }
 .content .inicio-component .prev, .content .inicio-component .next {
-  background-color: #252422;
-  color: #FFFFFF;
+  color: #252422;
   padding: 8px 12px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+}
+.content .inicio-component .prev i, .content .inicio-component .next i {
+  font-size: 40px;
 }
 .content .inicio-component .inicio-background {
   position: absolute;

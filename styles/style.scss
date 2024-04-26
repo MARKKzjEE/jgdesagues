@@ -203,11 +203,14 @@ footer {
         }
         
         .prev, .next {
-            color: $color-secondary;
+            color: $color-primary;
             padding: 8px 12px;
             border-radius: 10px;
             border: none;
             cursor: pointer;
+            i {
+                font-size: 40px;
+            }
         }   
 
         .inicio-background {
