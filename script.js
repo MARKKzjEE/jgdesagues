@@ -10,7 +10,7 @@ $(document).ready(function(){
         if(targetSection.length){
             // Calculamos la posición a la que queremos desplazar la página (la parte superior del contenedor de la sección menos el tamaño del menú en ese momento)
             var headerHeight = $('header').outerHeight(); // Obtenemos la altura del encabezado
-            var scrollToPosition = targetSection.offset().top - headerHeight;
+            var scrollToPosition = targetSection.offset().top;
             
             // Animamos el desplazamiento de la página
             $('html, body').animate({
