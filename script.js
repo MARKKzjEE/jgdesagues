@@ -2,8 +2,8 @@ $(document).ready(function(){
     var currentIndex = 0;
     var totalImages = $('.carousel-images img').length;
 
-    $('.header-option').click(function(){
-        var sectionId = $(this).text().toLowerCase(); // Obtenemos el texto del elemento y lo convertimos en minúsculas para usarlo como ID de la sección
+    $('.nav-element').click(function(){
+        var sectionId = $(this).attr('nav').toLowerCase(); // Obtenemos el texto del elemento y lo convertimos en minúsculas para usarlo como ID de la sección
         var targetSection = $('#' + sectionId); // Seleccionamos el contenedor de la sección correspondiente
 
         // Verificamos si el contenedor de la sección existe

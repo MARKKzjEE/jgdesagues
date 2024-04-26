@@ -113,6 +113,11 @@ header {
             }
         }
     }
+    .header-options-desktop {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
 }
 
 footer {
@@ -170,12 +175,13 @@ footer {
             display: flex;
             justify-content: center;
             margin-top: 64px;
+            width: 100%;
         }
 
         .carousel-container {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 48px;
         }
         
         .carousel-images {
@@ -378,9 +384,69 @@ footer {
     }
 }
 
+@media (min-width: 1000px) {
+    .header-options-mobile {
+        display: none !important;
+    }
+}
+
 @media (max-width: 999px) {
-    .inicio-sello {
+    .header-options-desktop {
+        display: none !important;
+    }
+    .header-options-mobile {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        i {
+            font-size: 30px;
+            color: $color-primary;
+        }
+        .header-contactar {
+            i {
+                color: $color-secondary !important;
+            }
+        }
+    }
+
+    .inicio-sello, .header-title {
         display: none;
+    }
+
+    .content {
+        .inicio-component {
+            padding: 2rem;
+            h1 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+        }
+        .servicios-component {
+            padding: 0;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            .servicios-row {
+                flex-direction: column;
+                align-items: center;
+                .servicios-card {
+                    width: 100%;
+                }
+            }
+        }
+        .como-trabajamos-component {
+            padding: 2rem;
+            .como-trabajamos-imagen {
+                display: none !important;
+            }
+            .como-trabajamos-outer-container {
+                .como-trabajamos-container {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .content .como-trabajamos-component .como-trabajamos-outer-container {
@@ -394,8 +460,21 @@ footer {
     }
 
     .content .inicio-component .carousel-images {
-        width: 250px;
-        height: 400px;
+        width: 200px;
+        height: 350px;
+    }
+
+    footer {
+        padding: 2rem;
+        gap:  0;
+        justify-content: center;
+        align-items: center;
+        .footer-options {
+            width: 100%;
+        }
+        .footer-name {
+            display: none;
+        }
     }
 }
 

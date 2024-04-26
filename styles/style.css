@@ -103,6 +103,11 @@ header .header-container .header-option {
 header .header-container .header-option:hover {
   color: #206d9b;
 }
+header .header-options-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
 footer {
   display: flex;
@@ -158,11 +163,12 @@ footer .footer-name {
   display: flex;
   justify-content: center;
   margin-top: 64px;
+  width: 100%;
 }
 .content .inicio-component .carousel-container {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 }
 .content .inicio-component .carousel-images {
   display: flex;
@@ -359,9 +365,60 @@ footer .footer-name {
   text-align: center;
 }
 
+@media (min-width: 1000px) {
+  .header-options-mobile {
+    display: none !important;
+  }
+}
 @media (max-width: 999px) {
-  .inicio-sello {
+  .header-options-desktop {
+    display: none !important;
+  }
+  .header-options-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .header-options-mobile i {
+    font-size: 30px;
+    color: #252422;
+  }
+  .header-options-mobile .header-contactar i {
+    color: #206d9b !important;
+  }
+  .inicio-sello, .header-title {
     display: none;
+  }
+  .content .inicio-component {
+    padding: 2rem;
+  }
+  .content .inicio-component h1 {
+    font-size: 1.75rem;
+  }
+  .content .inicio-component h3 {
+    font-size: 1rem;
+  }
+  .content .servicios-component {
+    padding: 0;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .content .servicios-component .servicios-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content .servicios-component .servicios-row .servicios-card {
+    width: 100%;
+  }
+  .content .como-trabajamos-component {
+    padding: 2rem;
+  }
+  .content .como-trabajamos-component .como-trabajamos-imagen {
+    display: none !important;
+  }
+  .content .como-trabajamos-component .como-trabajamos-outer-container .como-trabajamos-container {
+    width: 100%;
   }
   .content .como-trabajamos-component .como-trabajamos-outer-container {
     flex-direction: column;
@@ -372,8 +429,20 @@ footer .footer-name {
     padding-left: 32px;
   }
   .content .inicio-component .carousel-images {
-    width: 250px;
-    height: 400px;
+    width: 200px;
+    height: 350px;
+  }
+  footer {
+    padding: 2rem;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-options {
+    width: 100%;
+  }
+  footer .footer-name {
+    display: none;
   }
 }
 html, body, .content {
