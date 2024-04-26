@@ -168,7 +168,7 @@ footer .footer-name {
 .content .inicio-component .carousel-container {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 32px;
 }
 .content .inicio-component .carousel-images {
   display: flex;
