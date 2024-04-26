@@ -54,6 +54,11 @@ p {
     color: $color-primary;
 }
 
+a[href^="tel"], a[href^="mailto"] {
+    color: $color-light; /* Hereda el color del texto del elemento padre */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
 .btn-fill {
     background-color: $color-primary;
     padding: 0.5rem 1rem;
