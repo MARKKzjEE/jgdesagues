@@ -299,6 +299,7 @@ footer .footer-name {
   padding: 2rem;
   width: 50%;
   max-width: 500px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -405,6 +406,10 @@ footer .footer-name {
   .content .inicio-component h3 {
     font-size: 1rem;
   }
+  .content .inicio-component .carousel-images {
+    width: 200px;
+    height: 350px;
+  }
   .content .servicios-component {
     padding: 0;
     align-items: center;
@@ -424,20 +429,15 @@ footer .footer-name {
   .content .como-trabajamos-component .como-trabajamos-imagen {
     display: none !important;
   }
-  .content .como-trabajamos-component .como-trabajamos-outer-container .como-trabajamos-container {
-    width: 100%;
-  }
   .content .como-trabajamos-component .como-trabajamos-outer-container {
     flex-direction: column;
     align-items: center;
   }
-  .content .contactar-component h4 {
-    padding-right: 32px;
-    padding-left: 32px;
+  .content .como-trabajamos-component .como-trabajamos-outer-container .como-trabajamos-container {
+    width: 100%;
   }
-  .content .inicio-component .carousel-images {
-    width: 200px;
-    height: 350px;
+  .content .contactar-component {
+    padding: 2rem;
   }
   footer {
     padding: 2rem;
@@ -447,6 +447,7 @@ footer .footer-name {
   }
   footer .footer-options {
     width: 100%;
+    align-items: center;
   }
   footer .footer-name {
     display: none;
@@ -491,6 +492,32 @@ html::-webkit-scrollba, body::-webkit-scrollbar, .content::-webkit-scrollbar {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+.carousel-container .prev i,
+.carousel-container .next i {
+  transition: all 0.3s ease;
+}
+
+.carousel-container .prev i:hover,
+.carousel-container .next i:hover {
+  transform: scale(1.3);
+  color: #206d9b;
+}
+
+@media (max-width: 768px) {
+  /* Desactiva el hover en móviles */
+  .carousel-container .prev i,
+  .carousel-container .next i {
+    pointer-events: none; /* Desactiva hover en touch */
+  }
+  /* Permite hacer clic en los botones */
+  .carousel-container .prev i:active,
+  .carousel-container .next i:active {
+    pointer-events: auto;
+    color: #206d9b; /* Cambia solo el color en el clic */
+    transform: none; /* Desactiva el escalado */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
