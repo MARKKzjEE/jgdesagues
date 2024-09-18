@@ -452,6 +452,9 @@ footer .footer-name {
   footer .footer-name {
     display: none;
   }
+  #success-popup, #error-popup {
+    width: 80%;
+  }
 }
 html, body, .content {
   overflow-y: auto;
@@ -492,6 +495,16 @@ html::-webkit-scrollba, body::-webkit-scrollbar, .content::-webkit-scrollbar {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+.loading-icon {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Asegúrate de que esté por encima de otros elementos */
+  font-size: 48px; /* Ajusta el tamaño del ícono */
+  color: #206d9b; /* Cambia el color según tus preferencias */
 }
 
 .carousel-container .prev i,

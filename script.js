@@ -54,15 +54,25 @@ $(document).ready(function(){
     $('#contact-form').submit(function(event) {
         event.preventDefault(); // Previene el envío normal del formulario
 
+        // Mostrar el overlay y el ícono de carga
+        $('.overlay').fadeIn();
+        $('.loading-icon').fadeIn();
+
         emailjs.sendForm('service_xnnn1dq', 'template_t9y1yob', this)
         .then(function() {
-            $('.overlay').fadeIn();
+            // Ocultar el ícono de carga
+            $('.loading-icon').fadeOut();
+
+            // Mostrar el popup de éxito
             $('#success-popup').fadeIn().delay(5000).fadeOut(function() {
                 $('.overlay').fadeOut();
                 $('#contact-form')[0].reset(); // Resetea los campos del formulario
             });
         }, function(error) {
-            $('.overlay').fadeIn();
+            // Ocultar el ícono de carga
+            $('.loading-icon').fadeOut();
+
+            // Mostrar el popup de error
             $('#error-popup').fadeIn().delay(5000).fadeOut(function() {
                 $('.overlay').fadeOut();
                 $('#contact-form')[0].reset(); // Resetea los campos del formulario
@@ -70,14 +80,16 @@ $(document).ready(function(){
         });
     });
 
+    // Cerrar popup de éxito con la 'X'
     $('#success-popup .fa-times').click(function() {
-        $('.confirmation-popup').fadeOut();
+        $('#success-popup').stop(true, true).fadeOut(); // Detiene cualquier animación pendiente y oculta
         $('.overlay').fadeOut();
-        $('#contact-form')[0].reset();
+        $('#contact-form')[0].reset(); // Resetea los campos del formulario
     });
 
+    // Cerrar popup de error con la 'X'
     $('#error-popup .fa-times').click(function() {
-        $('.confirmation-popup').fadeOut();
+        $('#error-popup').stop(true, true).fadeOut(); // Detiene cualquier animación pendiente y oculta
         $('.overlay').fadeOut();
     });
 });
