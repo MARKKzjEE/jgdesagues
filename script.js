@@ -49,4 +49,35 @@ $(document).ready(function(){
     $('.prev').click(function(){
         prevImage();
     });
+
+    // Evento de envío del formulario de contacto
+    $('#contact-form').submit(function(event) {
+        event.preventDefault(); // Previene el envío normal del formulario
+
+        emailjs.sendForm('service_xnnn1dq', 'template_t9y1yob', this)
+        .then(function() {
+            $('.overlay').fadeIn();
+            $('#success-popup').fadeIn().delay(5000).fadeOut(function() {
+                $('.overlay').fadeOut();
+                $('#contact-form')[0].reset(); // Resetea los campos del formulario
+            });
+        }, function(error) {
+            $('.overlay').fadeIn();
+            $('#error-popup').fadeIn().delay(5000).fadeOut(function() {
+                $('.overlay').fadeOut();
+                $('#contact-form')[0].reset(); // Resetea los campos del formulario
+            });
+        });
+    });
+
+    $('#success-popup .fa-times').click(function() {
+        $('.confirmation-popup').fadeOut();
+        $('.overlay').fadeOut();
+        $('#contact-form')[0].reset();
+    });
+
+    $('#error-popup .fa-times').click(function() {
+        $('.confirmation-popup').fadeOut();
+        $('.overlay').fadeOut();
+    });
 });

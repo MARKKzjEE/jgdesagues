@@ -10,8 +10,27 @@
     <script src="https://kit.fontawesome.com/a277e15eb2.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("seIQ3VAGztfLDqzV9"); // Reemplaza 'your-user-ID' con tu ID de usuario real de EmailJS
+        })();
+    </script>
 </head>
 <body>
+    <div class="overlay"></div>
+    <div id="success-popup">
+        <i class="fas fa-times" style="position: absolute; top: 16px; right: 16px; cursor: pointer;"></i>
+        <h2 style="text-align: center;">¡Gracias por contactarnos!</h2>
+        <p>Tu mensaje ha sido enviado correctamente. Te responderemos lo antes posible.</p>
+    </div>
+    <div id="error-popup">
+        <i class="fas fa-times" style="position: absolute; top: 16px; right: 16px; cursor: pointer;"></i>
+        <h2 style="text-align: center;">¡Algo salió mal al enviar el mensaje!</h2>
+        <p>Tu mensaje no ha sido enviado. Por favor vuelve a intentarlo.</p>
+    </div>
+
+
     <header>
         <nav>
             <div class="header-container">
@@ -128,7 +147,7 @@
                 <h1>Contactar</h1>
                 <h4>No dudes en ponerte en contacto con nosotros a través de cualquiera de las vías disponibles en el pie de página, ya sea por teléfono o correo electrónico. También puedes rellenar el formulario que ves aquí, y te responderemos lo antes posible.</h4>
                 <div class="contactar-container">
-                    <form action="https://formsubmit.co/mark.gallego.gines@gmail.com" method="POST">
+                    <form id="contact-form">
                         <div class="data-container">
                             <label for="nombre">Nombre*:</label>
                             <input type="text" id="nombre" name="name" required>
@@ -150,11 +169,7 @@
                         </div>
                         
                         <button class="btn-fill" type="submit">Enviar</button>
-                        
-                        <!-- Campos ocultos para redirección y evitar spam -->
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/gracias.html">
-                        <input type="hidden" name="_captcha" value="false">
-                    </form>               
+                    </form>          
                 </div>
             </div>
         </div>
@@ -179,5 +194,7 @@
         </div>
         <div class="footer-name">J.G Desagües S.L</div>
     </footer>
+
+
 </body>
 </html>
