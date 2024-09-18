@@ -62,7 +62,7 @@ a[href^="tel"], a[href^="mailto"] {
 .btn-fill {
     background-color: $color-primary;
     padding: 0.5rem 1rem;
-    color: $color-background;
+    color: $color-background !important;
     cursor: pointer;
     font-weight: 600;
     border-radius: 10px;
@@ -288,7 +288,7 @@ footer {
                 }
                 .btn-fill {
                     background-color: $color-background;
-                    color: $color-primary;
+                    color: $color-primary !important;
                     width: 50%;
                     font-weight: 800;
                     font-size: 1rem;

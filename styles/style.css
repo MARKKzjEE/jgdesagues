@@ -53,7 +53,7 @@ a[href^=tel], a[href^=mailto] {
 .btn-fill {
   background-color: #252422;
   padding: 0.5rem 1rem;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   cursor: pointer;
   font-weight: 600;
   border-radius: 10px;
@@ -273,7 +273,7 @@ footer .footer-name {
 }
 .content .contactar-component .contactar-container form .btn-fill {
   background-color: #FFFFFF;
-  color: #252422;
+  color: #252422 !important;
   width: 50%;
   font-weight: 800;
   font-size: 1rem;
