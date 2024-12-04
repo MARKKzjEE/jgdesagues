@@ -58,7 +58,7 @@ $(document).ready(function(){
         $('.overlay').fadeIn();
         $('.loading-icon').fadeIn();
 
-        emailjs.sendForm('service_xnnn1dq', 'template_t9y1yob', this)
+        emailjs.sendForm('service_j5cgy2o', 'template_t9y1yob', this)
         .then(function() {
             // Ocultar el ícono de carga
             $('.loading-icon').fadeOut();
